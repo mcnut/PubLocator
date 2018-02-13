@@ -1,19 +1,26 @@
 //  ==================================
-//  CREATE A BASIC EXPRESS APPLICATION
+//       IMPORT REQUIRED PACKAGES
 //  ==================================
-
-//  Call the required packages
 var express = require('express');
 
-//  Create an instance of express
+//  ==================================
+//             DECLARATIONS
+//  ==================================
 var app = express();
+//  Set the view engine
+app.set("view-engine", "ejs");
 
-//  Test using a GET request to http://localhost:3000
+//  ==================================
+//                ROUTES
+//  ==================================
+//  Serve a file
 app.get('/', function (req, res) {
-  res.send('Hello PubLocator!');
+  res.render('home.ejs');
 });
 
-//  Start the server 
+//  ==================================
+//                SERVER
+//  ==================================
 app.listen(3000, function () {
   console.log('PubLocator Server listening on port 3000!');
 });
